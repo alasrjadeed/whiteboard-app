@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Socket } from 'socket.io-client';
+import { io } from 'socket.io-client';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   const joinRoom = () => {
     if (!roomId || !name) return;
-    const newSocket = Socket('http://localhost:3000');
+    const newSocket = io(window.location.origin);
     setSocket(newSocket);
     newSocket.emit('join-room', { roomId, userId: name, isTeacher });
     setConnected(true);
