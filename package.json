@@ -1,0 +1,22 @@
+{
+  "name": "whiteboard-alasar-jadeed",
+  "version": "1.0.0",
+  "description": "Interactive digital whiteboard for AL ASAR JADEED",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "client": "cd client && npm start",
+    "installall": "npm install && cd client && npm install"
+  },
+  "author": "AL ASAR JADEED",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.18.2",
+    "socket.io": "4.6.1",
+    "cors": "2.8.5",
+    "qrcode": "1.5.3"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  }
+}
