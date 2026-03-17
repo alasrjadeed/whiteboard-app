@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
-const QRCode = require('qrrcode');
+const QRCode = require('qrcode');
 const path = require('path');
 
 const app = express();
