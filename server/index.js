@@ -15,7 +15,9 @@ const studentBoards = new Map();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+
+const buildPath = path.join(__dirname, '../client/build');
+app.use(express.static(buildPath));
 
 app.get('/api/qr/:roomId', async (req, res) => {
   const { roomId } = req.params;
@@ -34,7 +36,12 @@ app.get('/api/rooms/:roomId/boards', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  const indexPath = path.join(buildPath, 'index.html');
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      res.status(500).send('Build folder not found. Please run npm run build first.');
+    }
+  });
 });
 
 io.on('connection', (socket) => {

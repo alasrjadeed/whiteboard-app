@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = ["npm install --prefix client && npm install"]
+
+[phases.build]
+cmds = ["npm run build --prefix client"]
+
+[start]
+cmd = "node server/index.js"
