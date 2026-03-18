@@ -1,0 +1,5 @@
+{
+  "name": "Whiteboard.AL ASAR JADEED",
+  "description": "A real-time collaborative whiteboard for teachers and students, featuring room-based sessions and live student monitoring.",
+  "requestFramePermissions": ["camera", "microphone"]
+}

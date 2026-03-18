@@ -1,0 +1,8 @@
+/* Custom styles for EduBoard */
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
